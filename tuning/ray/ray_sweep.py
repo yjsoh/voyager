@@ -40,6 +40,7 @@ def _setup_callbacks(config, print_every=None, model_path=None):
             min_lr=config.min_learning_rate,
             min_delta=0.005,
         ),
+        tf.keras.callbacks.EarlyStopping(monitor='loss', patience=3),
     ])
     return callbacks
 
